@@ -1,4 +1,4 @@
-# testing
+# Testing git scenarios
 Testing repository for Git Commands.
 
 ## Squash internal commits.
@@ -23,3 +23,24 @@ git reset HEAD~1
 git push -f 
 ```
 
+## Update last changes from master in a dev branch.
+
+### git merge ( Safe and common )
+```
+git checkout dev
+git merge master
+```
+** **Pros**: preserver history, simple **Cons:** Create merge commits
+
+### git rebase ( Cleaner history )
+```
+git checkout dev
+git rebase master
+```
+
+if dev is shared, we need:
+```
+git push origin dev --force-with-lease
+```
+
+** **Pros:** Linear history, easier to read **Cons:** Can be risk if dev is shared ( requires force push after rebase )
