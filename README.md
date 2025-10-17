@@ -38,6 +38,14 @@ git checkout dev
 git rebase master
 ```
 
+Resolve conflicts: 
+```
+git add .
+git commit
+# or
+git rebase --continue 
+```
+
 if dev is shared, we need:
 ```
 git push origin dev --force-with-lease
